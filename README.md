@@ -1,5 +1,5 @@
 # netlify_deployer
-A script to deploy a whoe directory to Netlify using their incremental deploy API.
+A script to deploy a whole directory to Netlify using their incremental deploy API.
 
 Usage:  
 `netlify_deployer.py branch_name netlify_site_id directory_to_deploy`
