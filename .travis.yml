@@ -1,0 +1,17 @@
+language: python
+
+stages:
+  - test
+  - name: deploy
+    if: type != pull_request
+
+jobs:
+  include:
+    - stage: test
+      python: 3.6
+      script: python setup.py install
+
+    - stage: deploy
+      if: env(NETLIFY_SITE_ID) is present
+      python: 3.6
+      script: python -m netlify_deployer.netlify_deployer master "$NETLIFY_SITE_ID" example-site/
