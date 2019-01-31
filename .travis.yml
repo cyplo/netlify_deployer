@@ -12,6 +12,7 @@ jobs:
 
       - stage: deploy
         python: 3.6
+        script: python setup.py sdist bdist_wheel
         provider: pypi
         on:
             branch: master
