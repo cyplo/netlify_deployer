@@ -1,0 +1,15 @@
+CHANGES
+=======
+
+* Use explicit build in the deploy step
+* Deploy to pypi from master
+* Ignore distribution files
+* .travis.yml: Add
+* netlify\_deployer.py: Move into own package
+* Reorganize for pip
+* Add information about setting NETLIFY\_TOKEN
+* Make the link to the issue explicit
+* Add an issue link for the preview toggle
+* Fix typo in README
+* Initial port of the blog deployer
+* Initial commit
