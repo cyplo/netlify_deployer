@@ -1,17 +1,18 @@
+dist: bionic
 language: python
-python: 3.6
+python: 3.8
 script: python setup.py build
 
 deploy:
-    skip_cleanup: true
-    distributions: sdist bdist_wheel
-    provider: pypi
-    edge:
-        source: ssbarnea/dpl
-        branch: master
-    on:
-        branch: master
-        tags: true
-    user: cyplo
-    password:
-        secure: gO6F5pgutSvDNNkabV2tznWpcudcBBhz4jpcOeZGTW1k+upxDY1N9LhszM7hffWtYy+lxvm6LhDtwKIjiVykPce450re/mbcIAAYu7Ir/c/0+VFLyVD09YQUDqrXePbydzyD7KTJ/db+t+vg6viFRBb/cai6+VVR2A8As1/CaYfzIj0lAC5I95bDtKIY70mOa+ygVYvH+mPdiPSmpumqOFYpWsbpKPUUDPzHYykbfmGybEYBtz1DbLumKdvddlVoK31P6Jly9C7Bk13XW2eTKmuQt6ORgfxtUwpC0bbyWlUBvue2X0K+fP/aHx2TTaJc8tswPh7i7peiIOJuvv0O4KQCGeTfApEBlMUwyrOA4dAgTvITc0LzNikrQA2HqdaZGNRRxEo6ekPpbarTfGkgNfqNKn1dRkhhcyzBpSnF3qeWpJ+bS8iQEy30meBzOPXdmFQl+DzUbRwJJ94D9dFxgeqhnGcgi+Yew1R91St8slz+RUf4tnwy1QoTKZaz8buqztcGI7dtDW87HdhsEZcOQ6YSqxaKH8+U5SWyYPONq1Wsrqnnv4AI19XQ+9kKnRhCTq4SoByDFuJE2LeGq2n+pXLH9vdWID7kiBBbAT4gBbxi9OtDU9b7W6qon4pvgz1/7Z2Nv5eKIbfBoW5YHtP0JGwnIDBA3mNTLpu3kFiXwA4=
+  skip_cleanup: true
+  distributions: sdist bdist_wheel
+  provider: pypi
+  edge:
+    source: ssbarnea/dpl
+    branch: master
+  on:
+    branch: master
+    tags: true
+  user: cyplo
+  password:
+    secure: gO6F5pgutSvDNNkabV2tznWpcudcBBhz4jpcOeZGTW1k+upxDY1N9LhszM7hffWtYy+lxvm6LhDtwKIjiVykPce450re/mbcIAAYu7Ir/c/0+VFLyVD09YQUDqrXePbydzyD7KTJ/db+t+vg6viFRBb/cai6+VVR2A8As1/CaYfzIj0lAC5I95bDtKIY70mOa+ygVYvH+mPdiPSmpumqOFYpWsbpKPUUDPzHYykbfmGybEYBtz1DbLumKdvddlVoK31P6Jly9C7Bk13XW2eTKmuQt6ORgfxtUwpC0bbyWlUBvue2X0K+fP/aHx2TTaJc8tswPh7i7peiIOJuvv0O4KQCGeTfApEBlMUwyrOA4dAgTvITc0LzNikrQA2HqdaZGNRRxEo6ekPpbarTfGkgNfqNKn1dRkhhcyzBpSnF3qeWpJ+bS8iQEy30meBzOPXdmFQl+DzUbRwJJ94D9dFxgeqhnGcgi+Yew1R91St8slz+RUf4tnwy1QoTKZaz8buqztcGI7dtDW87HdhsEZcOQ6YSqxaKH8+U5SWyYPONq1Wsrqnnv4AI19XQ+9kKnRhCTq4SoByDFuJE2LeGq2n+pXLH9vdWID7kiBBbAT4gBbxi9OtDU9b7W6qon4pvgz1/7Z2Nv5eKIbfBoW5YHtP0JGwnIDBA3mNTLpu3kFiXwA4=
