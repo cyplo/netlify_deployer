@@ -4,7 +4,7 @@ sources:
 
 secrets:
   - b7161fff-05f4-4470-b4a1-57bd67dede23
-
+  - 6b127d6f-e950-462e-a383-3cb6ae0ea60d
 tasks:
   - github_push: |
       set +xv
@@ -17,3 +17,4 @@ tasks:
       set +xv
       cd netlify-deployer
       nix-shell --run 'python setup.py sdist bdist_wheel'
+      nix-shell -p python38Packages.twine --run 'twine upload'
