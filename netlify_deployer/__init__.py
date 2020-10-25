@@ -43,7 +43,7 @@ def getAllFilePathsForDirectory(directory):
         paths += ((os.path.join(root, name)) for name in filenames)
     return paths
 
-def calculateHashesForPaths(paths):
+def calculateHashesForPaths(paths, directory_to_deploy):
     print('Hashing...', end="")
     hashes = {}
     for path in paths:
@@ -97,7 +97,7 @@ def getExistingDeployment(deployment_id):
 def invertDict(dict):
     return {v: k for k, v in dict.items()}
 
-def uploadFilesForHashes(files_for_hashes, required_hashes):
+def uploadFilesForHashes(files_for_hashes, required_hashes, directory_to_deploy):
     for required_hash in required_hashes:
         current_file_name = files_for_hashes[required_hash]
         print('Uploading ' + current_file_name + "...", end="")
@@ -126,7 +126,7 @@ def main():
     validateDirectoryStructure(directory_to_deploy)
 
     paths_to_hash = getAllFilePathsForDirectory(directory_to_deploy)
-    file_hashes = calculateHashesForPaths(paths_to_hash)
+    file_hashes = calculateHashesForPaths(paths_to_hash, directory_to_deploy)
 
     if not len(sys.argv) == 5:
         deployment = createDeployment(file_hashes)
@@ -140,7 +140,7 @@ def main():
 
     new_deploy_url = base_url + "deploys/" + deployment_id + "/"
     file_upload_headers = {"Authorization": "Bearer " + auth_token, 'content-type': "application/octet-stream"}
-    uploadFilesForHashes(files_for_hashes, deployment['required'])
+    uploadFilesForHashes(files_for_hashes, deployment['required'], directory_to_deploy)
 
     print('Done uploading, waiting for the confirmation...')
     while deployment['state'] != 'ready':
