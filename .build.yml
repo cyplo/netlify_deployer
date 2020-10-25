@@ -11,7 +11,7 @@ tasks:
       cd netlify-deployer
       GITHUB_TOKEN=`cat ~/.github_token`
       git remote add github https://cyplo:$GITHUB_TOKEN@github.com/cyplo/netlify_deployer.git
-      git push github master --tags
+      git push github master --tags --force
 
   - pypi_publish: |
       set +xv
