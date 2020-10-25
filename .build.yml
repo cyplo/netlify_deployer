@@ -17,4 +17,4 @@ tasks:
       set +xv
       cd netlify-deployer
       nix-shell --run 'python setup.py sdist bdist_wheel'
-      git describe --exact-match HEAD && nix-shell -p python38Packages.twine --run 'twine upload dist/*'
+      if [ $(git tag --points-at HEAD | wc -m) -ne 0 ]; then  nix-shell -p python38Packages.twine --run 'twine upload dist/*'; fi
