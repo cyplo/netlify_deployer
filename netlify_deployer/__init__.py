@@ -97,7 +97,7 @@ def getExistingDeployment(deployment_id, deploys_url, json_headers):
 def invertDict(dict):
     return {v: k for k, v in dict.items()}
 
-def uploadFilesForHashes(files_for_hashes, required_hashes, directory_to_deploy, new_deploy_url):
+def uploadFilesForHashes(files_for_hashes, required_hashes, directory_to_deploy, new_deploy_url,file_upload_headers):
     for required_hash in required_hashes:
         current_file_name = files_for_hashes[required_hash]
         print('Uploading ' + current_file_name + "...", end="")
@@ -140,7 +140,7 @@ def main():
 
     new_deploy_url = base_url + "deploys/" + deployment_id + "/"
     file_upload_headers = {"Authorization": "Bearer " + auth_token, 'content-type': "application/octet-stream"}
-    uploadFilesForHashes(files_for_hashes, deployment['required'], directory_to_deploy, new_deploy_url)
+    uploadFilesForHashes(files_for_hashes, deployment['required'], directory_to_deploy, new_deploy_url, file_upload_headers)
 
     print('Done uploading, waiting for the confirmation...')
     while deployment['state'] != 'ready':
