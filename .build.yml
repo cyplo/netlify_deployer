@@ -16,6 +16,6 @@ tasks:
   - pypi_publish: |
       set +xv
       cd netlify-deployer
-      nix-shell --run 'python setup.py sdist bdist_wheel'
+      nix-shell --run 'python setup.py dist_wheel'
       rm -f dist/netlify_deployer-0.0.0*
       if [ $(git tag --points-at HEAD | wc -m) -ne 0 ]; then  nix-shell -p python38Packages.twine --run 'twine upload dist/*'; fi
