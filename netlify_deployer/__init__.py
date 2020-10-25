@@ -28,10 +28,10 @@ def getDirectoryToDeploy():
 def getSiteId():
     return sys.argv[2]
 
-def validateDirectoryStructure():
+def validateDirectoryStructure(directory):
     print('Validating structure...', end="")
     index_filename = "index.html"
-    if os.path.isfile(os.path.join(directory_to_deploy, index_filename)):
+    if os.path.isfile(os.path.join(directory, index_filename)):
         print('OK')
     else:
         print('No ' + index_filename)
@@ -123,7 +123,7 @@ def main():
     directory_to_deploy = getDirectoryToDeploy()
 
     print("Deploying " + directory_to_deploy + " to Netlify as " + site_id)
-    validateDirectoryStructure()
+    validateDirectoryStructure(directory_to_deploy)
 
     paths_to_hash = getAllFilePathsForDirectory(directory_to_deploy)
     file_hashes = calculateHashesForPaths(paths_to_hash)
