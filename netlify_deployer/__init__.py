@@ -69,7 +69,7 @@ def getBranchName():
     return sys.argv[1]
 
 
-def createDeployment(file_hashes):
+def createDeployment(file_hashes, deploys_url):
     print('Creating new deployment...', end="")
     branch_name = getBranchName()
     if branch_name == 'master':
@@ -85,7 +85,7 @@ def createDeployment(file_hashes):
     print('OK')
     return response.json()
 
-def getExistingDeployment(deployment_id):
+def getExistingDeployment(deployment_id, deploys_url):
     deploy_url = deploys_url + deployment_id + "/"
     response = requests.get(url=deploy_url, headers=json_headers)
     if not response.ok:
@@ -129,7 +129,7 @@ def main():
     file_hashes = calculateHashesForPaths(paths_to_hash, directory_to_deploy)
 
     if not len(sys.argv) == 5:
-        deployment = createDeployment(file_hashes)
+        deployment = createDeployment(file_hashes, deploys_url)
     else:
         deployment_id = sys.argv[4]
         deployment = getExistingDeployment(deployment_id)
@@ -145,6 +145,6 @@ def main():
     print('Done uploading, waiting for the confirmation...')
     while deployment['state'] != 'ready':
         time.sleep(1)
-        deployment = getExistingDeployment(deployment_id)
+        deployment = getExistingDeployment(deployment_id, deploys_url)
 
     print('Fully deployed at ' + deployment['deploy_ssl_url'])
