@@ -8,6 +8,7 @@ in
   mach-nix.mkPythonShell {
     requirements = builtins.readFile ./requirements.txt + ''
     setuptools
+    wheel
     pbr
     '';
   }
