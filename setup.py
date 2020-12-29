@@ -1,11 +1,3 @@
-import setuptools
-
-with open('README.md', 'r') as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-)
-
 #!/usr/bin/env python
 
 from setuptools import setup
