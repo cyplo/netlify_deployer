@@ -11,5 +11,6 @@ pkgs.mkShell {
       requests
       pip
       virtualenv
+      pylint
   ];
 }

@@ -1,6 +1,114 @@
 CHANGES
 =======
 
+0.5.1
+-----
+
+* publish sources
+
+0.5.0
+-----
+
+* Pass down headers
+
+0.4.7
+-----
+
+* Pass down deploy url
+
+0.4.6
+-----
+
+* Fix passing down headers
+
+0.4.5
+-----
+
+* Fix passing down deploys url
+
+0.4.4
+-----
+
+* Fix passing down variable
+
+0.4.3
+-----
+
+* Force sync with github
+* Fix typo
+* Only upload wheels
+
+0.4.2
+-----
+
+* Fix a bug introduced after upgrade
+
+0.4.1
+-----
+
+* remove spurious dis files
+
+0.4.0
+-----
+
+* better tag detection
+* only upload from tags
+* Correct upload command
+* upload to pypi
+* add missing build dependency
+* start moving to sr.ht with builds
+
+0.3.0
+-----
+
+* add main wrapper
+* also push tags to github
+
+0.2.0
+-----
+
+* add a wrappre script
+
+0.1.0
+-----
+
+* mograte to newer version ofpbr
+* do not use setup requirements via requirements.txt
+* update travis build env
+* push to master by default
+* fix typo in build script
+* add sourcehut build
+* add nix shell
+* add setuptools explicitly
+
+0.0.6
+-----
+
+* bump
+* Use readme as description
+
+0.0.5
+-----
+
+* .travis.yml: Add language
+
+0.0.3
+-----
+
+* sync pbr
+* sync pbr
+
+0.0.2
+-----
+
+* try using workaround for the problem with travis pypi permissions
+
+0.0.1
+-----
+
+* do not try to install on travis as no permissions
+* enable travis deploy
+* use pbr for version management
 * Use explicit build in the deploy step
 * Deploy to pypi from master
 * Ignore distribution files
