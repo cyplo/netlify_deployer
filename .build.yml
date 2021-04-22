@@ -3,7 +3,7 @@ sources:
   - https://git.sr.ht/~cyplo/netlify-deployer
 
 secrets:
-  - b7161fff-05f4-4470-b4a1-57bd67dede23
+  - 6c23a8c1-7a30-4a7e-b3b7-0171e898a7d3
   - 6b127d6f-e950-462e-a383-3cb6ae0ea60d
 tasks:
   - github_push: |
